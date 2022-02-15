@@ -155,9 +155,9 @@ function render (g: Game) {
 
 		row.forEach((val, colIndex) => {
 			str += val  === -1 ? '*' : val ? '#' : ' ';
-			(rowEl.childNodes[colIndex] as HTMLElement).setAttribute('class',
-				val === -1 ? 'target' : val ? 'snake' : 'empty'
-			)
+			let cellEl = rowEl.childNodes[colIndex] as HTMLElement
+			cellEl.setAttribute('class', val === -1 ? 'target' : val ? 'snake' : 'empty');
+			cellEl.setAttribute('style', `opacity: ${val < 1 ? 1 : 0.75 * val / g.length + 0.25}`);
 		});
 	});
 	console.log(str);
