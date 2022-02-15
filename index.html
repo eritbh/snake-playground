@@ -8,17 +8,20 @@
 
 	<style>
 		#board, .row {
-			display: inline-flex;
+			display: flex;
 		}
 		#board {
 			flex-direction: column;
 			border-bottom: 1px solid lightgray;
 			border-right: 1px solid lightgray;
 			margin-bottom: 20px;
+			aspect-ratio: 1 / 1;
+			max-height: 90vh;
+		}
+		.row, .row > div {
+			flex: 1;
 		}
 		.row > div {
-			width: 10px;
-			height: 10px;
 			border-top: 1px solid lightgray;
 			border-left: 1px solid lightgray;
 		}
