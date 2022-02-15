@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		#board, .row {
+			display: inline-flex;
+		}
+		#board {
+			flex-direction: column;
+			border-bottom: 1px solid lightgray;
+			border-right: 1px solid lightgray;
+			margin-bottom: 20px;
+		}
+		.row > div {
+			width: 10px;
+			height: 10px;
+			border-top: 1px solid lightgray;
+			border-left: 1px solid lightgray;
+		}
+
+		.snake {
+			background: green;
+		}
+		.target {
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="board"></div>
+	<div id="controls">
+		<button onclick="initDisplay(10)">init</button>
+		<button onclick="advanceDisplay('n')">North</button>
+		<button onclick="advanceDisplay('s')">South</button>
+		<button onclick="advanceDisplay('e')">East</button>
+		<button onclick="advanceDisplay('w')">West</button>
+	</div>
+	<script src="dist/snake.js"></script>
+</body>
+</html>
